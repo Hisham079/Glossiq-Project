@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample_glossiq/home.dart';
+import 'package:sample_glossiq/all_categories.dart';
+import 'package:sample_glossiq/salons/salons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:HomePage(),
+      home:SalonsPage(),
     );
   }
 }
