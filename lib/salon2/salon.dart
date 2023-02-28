@@ -7,8 +7,8 @@ import 'package:sample_glossiq/salons/custom_widget.dart/icon_text.dart';
 import 'package:sample_glossiq/salons/custom_widget.dart/salcon_tile.dart';
 import 'package:sample_glossiq/salons/custom_widget.dart/salons_widget.dart';
 
-class SalonsPage extends StatelessWidget {
-  SalonsPage({super.key});
+class SalonsSecondPage extends StatelessWidget {
+  SalonsSecondPage({super.key});
   AllCategories category = AllCategories();
   @override
   Widget build(BuildContext context) {
@@ -35,18 +35,18 @@ class SalonsPage extends StatelessWidget {
                 ),
               ),
               decoration: BoxDecoration(
-                color: const Color(0xFFF4F4F4),
+                color: Color(0xFFF4F4F4),
                 borderRadius: BorderRadius.circular(30),
               ),
             )),
         actions: [
           Container(
-            margin: const EdgeInsets.only(top: 9, bottom: 9, right: 8),
+            margin: EdgeInsets.only(top: 9, bottom: 9, right: 8),
             width: 40,
             decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(70)),
                 border: Border.all(color: Colors.grey)),
-            child: const Icon(
+            child: Icon(
               Icons.mail,
               color: Colors.black,
             ),
@@ -66,12 +66,12 @@ class SalonsPage extends StatelessWidget {
               Container(
                 color: const Color(0xFFFFFFFF),
                 child: ListTile(
-                  leading: const Text(
+                  leading: Text(
                     'Salons',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
-                      fontFamily: 'D-Bol-24',
+                      fontFamily: 'IBM Plex Sans, Bold',
                       color: Color(0xFf161616),
                     ),
                   ),
@@ -83,12 +83,12 @@ class SalonsPage extends StatelessWidget {
                             builder: (context) => AllCategories(),
                           ));
                     },
-                    child: const Text(
+                    child: Text(
                       'View All',
                       style: TextStyle(
                           color: Color(0xFF161616),
                           fontSize: 14,
-                          fontFamily: 'IBM Plex Sans, Bold',
+                          fontFamily: 'IBM Plex Sans',
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -117,10 +117,10 @@ class SalonsPage extends StatelessWidget {
                                 fit: BoxFit.cover)),
                         child: Padding(
                           padding: const EdgeInsets.only(top: 65),
-                          child: SizedBox(
-                            height: 40,
-                            width: 20,
-                            child: Center(
+                          child: Center(
+                            child: SizedBox(
+                              height: 40,
+                              width: 96,
                               child: Text(
                                 category.text[index],
                                 style: const TextStyle(
@@ -146,10 +146,10 @@ class SalonsPage extends StatelessWidget {
                 height: 0.2,
               ),
               SalconTile(
-                iconColor:  const Color(0xFFC6C6C6),
-                color:  const Color(0xFF161616),
+                iconColor:  Color(0xFF161616),
+                color: Color(0xFF161616),
                 icon: Icons.location_on,
-                text: 'Near me',
+                text: 'Brnciceva ulica 14',
               ),
               const Divider(
                 color: Color(0xFFF4F4F4),
@@ -157,10 +157,10 @@ class SalonsPage extends StatelessWidget {
                 thickness: 2,
               ),
               SalconTile(
-                iconColor:  const Color(0xFFC6C6C6),
-                color:  const Color(0xFF161616),
+                iconColor:  Color(0xFF161616),
+                color: Color(0xFF161616),
                 icon: Icons.calendar_today_rounded,
-                text: 'Date',
+                text: 'Monday,12 Nov 2022',
               ),
               const Divider(
                 color: Color(0xFFF4F4F4),
@@ -168,10 +168,10 @@ class SalonsPage extends StatelessWidget {
                 thickness: 2,
               ),
               SalconTile(
-                iconColor:  const Color(0xFFC6C6C6),
-                color:  const Color(0xFF161616),
+                iconColor:  Color(0xFF161616),
+                color: Color(0xFF161616),
                 icon: Icons.location_on,
-                text: 'Time',
+                text: '12:30-1830',
               ),
               Container(
                 height: 800,

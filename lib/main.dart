@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample_glossiq/all_categories.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sample_glossiq/allCatogories/all_categories.dart';
 import 'package:sample_glossiq/salons/salons.dart';
 
 void main() {
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        fontFamily: GoogleFonts.ibmPlexSans().fontFamily,
+        
       ),
       home:SalonsPage(),
     );
