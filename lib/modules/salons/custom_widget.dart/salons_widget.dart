@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:sample_glossiq/salons/custom_widget.dart/icon_text.dart';
+import 'package:sample_glossiq/modules/salons/custom_widget.dart/icon_text.dart';
 
 class SalonsWidget extends StatelessWidget {
   const SalonsWidget({super.key});

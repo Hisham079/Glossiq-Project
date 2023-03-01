@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:sample_glossiq/allCatogories/all_categories.dart';
-import 'package:sample_glossiq/salons/custom_widget.dart/back_button.dart';
-import 'package:sample_glossiq/salons/custom_widget.dart/icon_text.dart';
-import 'package:sample_glossiq/salons/custom_widget.dart/salcon_tile.dart';
-import 'package:sample_glossiq/salons/custom_widget.dart/salons_widget.dart';
+import 'package:sample_glossiq/modules/allCatogories/all_categories.dart';
+import 'package:sample_glossiq/modules/salons/custom_widget.dart/back_button.dart';
+import 'package:sample_glossiq/modules/salons/custom_widget.dart/icon_text.dart';
+import 'package:sample_glossiq/modules/salons/custom_widget.dart/salcon_tile.dart';
+import 'package:sample_glossiq/modules/salons/custom_widget.dart/salons_widget.dart';
 
-class SalonsSecondPage extends StatelessWidget {
-  SalonsSecondPage({super.key});
+class SalonsPage extends StatelessWidget {
+  SalonsPage({super.key});
   AllCategories category = AllCategories();
   @override
   Widget build(BuildContext context) {
@@ -35,18 +35,18 @@ class SalonsSecondPage extends StatelessWidget {
                 ),
               ),
               decoration: BoxDecoration(
-                color: Color(0xFFF4F4F4),
+                color: const Color(0xFFF4F4F4),
                 borderRadius: BorderRadius.circular(30),
               ),
             )),
         actions: [
           Container(
-            margin: EdgeInsets.only(top: 9, bottom: 9, right: 8),
+            margin: const EdgeInsets.only(top: 9, bottom: 9, right: 8),
             width: 40,
             decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(70)),
                 border: Border.all(color: Colors.grey)),
-            child: Icon(
+            child: const Icon(
               Icons.mail,
               color: Colors.black,
             ),
@@ -66,12 +66,12 @@ class SalonsSecondPage extends StatelessWidget {
               Container(
                 color: const Color(0xFFFFFFFF),
                 child: ListTile(
-                  leading: Text(
+                  leading: const Text(
                     'Salons',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
-                      fontFamily: 'IBM Plex Sans, Bold',
+                      fontFamily: 'D-Bol-24',
                       color: Color(0xFf161616),
                     ),
                   ),
@@ -83,12 +83,12 @@ class SalonsSecondPage extends StatelessWidget {
                             builder: (context) => AllCategories(),
                           ));
                     },
-                    child: Text(
+                    child: const Text(
                       'View All',
                       style: TextStyle(
                           color: Color(0xFF161616),
                           fontSize: 14,
-                          fontFamily: 'IBM Plex Sans',
+                          fontFamily: 'IBM Plex Sans, Bold',
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -117,10 +117,10 @@ class SalonsSecondPage extends StatelessWidget {
                                 fit: BoxFit.cover)),
                         child: Padding(
                           padding: const EdgeInsets.only(top: 65),
-                          child: Center(
-                            child: SizedBox(
-                              height: 40,
-                              width: 96,
+                          child: SizedBox(
+                            height: 40,
+                            width: 96,
+                            child: Center(
                               child: Text(
                                 category.text[index],
                                 style: const TextStyle(
@@ -145,59 +145,92 @@ class SalonsSecondPage extends StatelessWidget {
               const SizedBox(
                 height: 0.2,
               ),
-              SalconTile(
-                iconColor:  Color(0xFF161616),
-                color: Color(0xFF161616),
+              SalonTile(
+                iconColor: const Color(0xFFC6C6C6),
+                color: const Color(0xFF161616),
                 icon: Icons.location_on,
-                text: 'Brnciceva ulica 14',
+                text: 'Near me',
+                children: [
+                  Container(
+                    height: 800,
+                    color: const Color(0xFFE0E0E0),
+                    child: Center(
+                      child: Column(
+                        children: const [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            '2 salons',
+                            style: TextStyle(
+                                color: Color(0xFF6F6F6F),
+                                fontFamily: 'IBM Plex Sans',
+                                fontSize: 14),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          SalonsWidget(),
+                          SalonsWidget()
+                        ],
+                      ),
+                    ),
+                  )
+                ],
               ),
+              // ExpansionTile(
+              //   leading: Icon(Icons.location_on),
+              //   title:Text('Near me'),
+              //   trailing:Icon(Icons.keyboard_arrow_down_rounded) , ),
               const Divider(
                 color: Color(0xFFF4F4F4),
                 height: 2,
                 thickness: 2,
               ),
-              SalconTile(
-                iconColor:  Color(0xFF161616),
-                color: Color(0xFF161616),
+              SalonTile(
+                children: [],
+                iconColor: const Color(0xFFC6C6C6),
+                color: const Color(0xFF161616),
                 icon: Icons.calendar_today_rounded,
-                text: 'Monday,12 Nov 2022',
+                text: 'Date',
               ),
               const Divider(
                 color: Color(0xFFF4F4F4),
                 height: 2,
                 thickness: 2,
               ),
-              SalconTile(
-                iconColor:  Color(0xFF161616),
-                color: Color(0xFF161616),
-                icon: Icons.location_on,
-                text: '12:30-1830',
+              SalonTile(
+                iconColor: const Color(0xFFC6C6C6),
+                color: const Color(0xFF161616),
+                icon: Icons.access_time_filled_outlined,
+                text: 'Time',
+                children: [],
               ),
-              Container(
-                height: 800,
-                color: const Color(0xFFE0E0E0),
-                child: Center(
-                  child: Column(
-                    children: const [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        '2 salons',
-                        style: TextStyle(
-                            color: Color(0xFF6F6F6F),
-                            fontFamily: 'IBM Plex Sans',
-                            fontSize: 14),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SalonsWidget(),
-                      SalonsWidget()
-                    ],
-                  ),
-                ),
-              )
+              // Container(
+              //   height: 800,
+              //   color: const Color(0xFFE0E0E0),
+              //   child: Center(
+              //     child: Column(
+              //       children: const [
+              //         SizedBox(
+              //           height: 20,
+              //         ),
+              //         Text(
+              //           '2 salons',
+              //           style: TextStyle(
+              //               color: Color(0xFF6F6F6F),
+              //               fontFamily: 'IBM Plex Sans',
+              //               fontSize: 14),
+              //         ),
+              //         SizedBox(
+              //           height: 5,
+              //         ),
+              //         SalonsWidget(),
+              //         SalonsWidget()
+              //       ],
+              //     ),
+              //   ),
+              // )
             ],
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:sample_glossiq/salons/custom_widget.dart/back_button.dart';
+import 'package:sample_glossiq/modules/salons/custom_widget.dart/back_button.dart';
 
 class AllCategories extends StatelessWidget {
   AllCategories({super.key});
