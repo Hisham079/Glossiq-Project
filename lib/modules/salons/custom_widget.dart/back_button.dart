@@ -14,6 +14,8 @@ class CustomBackbutton extends StatelessWidget {
       child: InkWell(
         onTap: buttonAction,
         child: Container(
+          height: 35,
+          width: 31,
           decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(60)),
               border: Border.all(color: Colors.grey)

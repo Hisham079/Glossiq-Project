@@ -178,10 +178,7 @@ class SalonsPage extends StatelessWidget {
                   )
                 ],
               ),
-              // ExpansionTile(
-              //   leading: Icon(Icons.location_on),
-              //   title:Text('Near me'),
-              //   trailing:Icon(Icons.keyboard_arrow_down_rounded) , ),
+              
               const Divider(
                 color: Color(0xFFF4F4F4),
                 height: 2,

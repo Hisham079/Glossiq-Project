@@ -35,6 +35,12 @@ TextStyle pageHead = const TextStyle(
     fontWeight: FontWeight.w800,
     fontFamily: 'ibmPlexSemiBold');
 
+    TextStyle pageHead2 = const TextStyle(
+    color: Color(0xFF161616),
+    fontSize: 18,
+    fontWeight: FontWeight.w800,
+    fontFamily: 'ibmPlexSemiBold');
+
 TextStyle mediumText = const TextStyle(
     color: Colors.black,
     fontSize: 30,
