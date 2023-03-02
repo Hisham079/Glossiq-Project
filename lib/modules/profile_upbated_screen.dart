@@ -15,7 +15,7 @@ class ProfileUpdatedScreen extends StatelessWidget {
           height: 205,
           width: 312,
           decoration: BoxDecoration(
-            gradient: RadialGradient(
+            gradient: const RadialGradient(
                       center: Alignment.bottomCenter,
                         radius: 0.4,
                         colors: [Color(0xFFBDFF3B), Colors.white],
@@ -24,36 +24,42 @@ class ProfileUpdatedScreen extends StatelessWidget {
                         tileMode: TileMode.clamp),
               borderRadius: BorderRadius.circular(14),
               color: Colors.white,
-              boxShadow: [BoxShadow(blurRadius: 5, color: Colors.grey)]),
+              boxShadow: [const BoxShadow(blurRadius: 5, color: Colors.grey)]),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               kHeight15,
               kHeight10,
               Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      tileMode: TileMode.decal,
-                      colors: [Color(0xFFC6C6C6), Color(0xFFBDFF3B)]),
-                  shape: BoxShape.circle,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(3),
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Color(0xFFC6C6C6),
-                    // backgroundImage: AssetImage(''),
-                    child: SizedBox(
-                        height: 30,
-                        width: 30,
-                        child: Image.asset('assets/images/logo3.png')),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(14),color: Colors.grey),
+                child: Container(
+                  height: 60,
+                  width: 60,
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    gradient: LinearGradient(
+                      begin: Alignment.center,
+                      stops: [0.1,0.8],
+                        tileMode: TileMode.decal,
+                        colors: [ Color(0xFFBDFF3B), Color(0xFFBDFF3B)]),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(3),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: const Color(0xFFC6C6C6),
+                      // backgroundImage: AssetImage(''),
+                      child: SizedBox(
+                          height: 30,
+                          width: 30,
+                          child: Image.asset('assets/images/logo3.png')),
+                    ),
                   ),
                 ),
               ),
               kHeight15,
-              Text(
+              const Text(
                 'Profile Updated!',
                 style: TextStyle(
                     fontSize: 20,
@@ -65,9 +71,9 @@ class ProfileUpdatedScreen extends StatelessWidget {
               Container(
                 height: 72,
                 width: 360,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                 ),
-                margin: EdgeInsets.only(left: 29, right: 20, top: 10),
+                margin: const EdgeInsets.only(left: 29, right: 20, top: 10),
                 child: Text(
                   '''Lorem Ipsum is simply dummy text of the
          printing and typesetting industry.''',

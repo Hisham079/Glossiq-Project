@@ -16,101 +16,162 @@ import 'pages/page_one.dart';
 import 'pages/page_two.dart';
 
 class PersonalInfo extends StatefulWidget {
-   PersonalInfo({super.key});
-   PageController? controller;
+  PersonalInfo({super.key});
+  PageController pageController = PageController();
+  int pageChanged = 0;
 
   @override
   State<PersonalInfo> createState() => _PersonalInfoState();
 }
 
-
 class _PersonalInfoState extends State<PersonalInfo> {
-   List<BottomNavModel>bottomNavList=[
-    BottomNavModel(key: 0,value: 'Hair type'),
-    BottomNavModel(key: 1,value: 'Hair Length'),
-    BottomNavModel(key: 2,value: 'Hair Color'),
-    BottomNavModel(key: 3,value: 'Scalp Condition'),
-    BottomNavModel(key: 4,value: 'Hair Problem'),
-    BottomNavModel(key: 5,value: 'Skin'),
-    BottomNavModel(key: 6,value: 'Eyes'),
-    BottomNavModel(key: 7,value: 'Nails'),
-  
-   ];
-   @override
+  List<BottomNavModel> bottomNavList = [
+    BottomNavModel(key: 0, value: 'Hair type'),
+    BottomNavModel(key: 1, value: 'Hair Length'),
+    BottomNavModel(key: 2, value: 'Hair Color'),
+    BottomNavModel(key: 3, value: 'Scalp Condition'),
+    BottomNavModel(key: 4, value: 'Hair Problem'),
+    BottomNavModel(key: 5, value: 'Skin'),
+    BottomNavModel(key: 6, value: 'Eyes'),
+    BottomNavModel(key: 7, value: 'Nails'),
+  ];
+  @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-   // widget.controller=bo
+    // widget.controller=bo
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
-      body: PageView(
-        //controller:bottomNavList. ,
-        children: [
-          PageOne(),
-          PageTwo(),
-         PageThree(),
-         PageFour(),
-         PageFive(),
-         PageSix(),
-         PageSeven(),
-         PageEight(),
-        ],
-      ),
-      bottomNavigationBar:Container(
-        height: 150,
-        decoration: BoxDecoration(color: Color(0xFF272727)),
-        
-      child: Column(
-        children: [
-          kHeight15,
-          kHeight10,
-          Expanded(
-            child: SizedBox(
-              height: 70,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: bottomNavList.length,
-                itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(left: 40,right: 10),
-                  child: Text(
-                    
-                    bottomNavList[index].value.toString(),
-                    style: TextStyle(color: Colors.white,fontSize: 16,fontFamily: 'IBM Plex Sans, Medium',fontWeight: FontWeight.w500),),
-                );
-              },),
-            ),
-          ),
-          kHeight,
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(mainAxisAlignment: MainAxisAlignment.end,
+        appBar: MyAppBar(),
+        body: PageView(
+          pageSnapping: true,
+          controller: widget.pageController,
+          onPageChanged: (value) {
+            setState(() {
+              widget.pageChanged = value;
+              print(widget.pageChanged);
+            });
+          },
+          children: [
+            PageOne(),
+            PageTwo(),
+            PageThree(),
+            PageFour(),
+            PageFive(),
+            PageSix(),
+            PageSeven(),
+            PageEight(),
+          ],
+        ),
+        bottomNavigationBar: Container(
+            height: 150,
+            decoration: BoxDecoration(color: Color(0xFF272727)),
+            child: Column(
               children: [
-                Text('Skip',style: TextStyle(color: Colors.white,fontSize: 16,fontFamily: 'IBM Plex Sans, Bold',fontWeight: FontWeight.bold),),
-                kWidth30,
-                ElevatedButton(
-                  style:  ElevatedButton.styleFrom(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
-                  elevation: 0,
-                  backgroundColor: const Color(0xFFBDFF3B),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+                kHeight15,
+                kHeight10,
+                Expanded(
+                  child: SizedBox(
+                    height: 70,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: bottomNavList.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 40, right: 10),
+                          child: Text(
+                            bottomNavList[index].value.toString(),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontFamily: 'IBM Plex Sans, Medium',
+                                fontWeight: FontWeight.w500),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
-                  onPressed: () {
-                  
-                }, child: Text('Next',style: TextStyle(color:grey100,fontSize: 16,fontFamily:'IBM Plex Sans, Bold' ,fontWeight: FontWeight.bold),))
+                kHeight,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 18),
+                          elevation: 0,
+                          backgroundColor: Colors.transparent,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                              side: BorderSide(
+                                  color: Color(0xFF6F6F6F), width: 1)),
+                        ),
+                        onPressed: () {
+                          if(widget.pageChanged==0){
+                            null;
+                          }else{
+                             widget.pageController.animateToPage(
+                              widget.pageChanged--,
+                              duration: const Duration(milliseconds: 250),
+                              curve: Curves.bounceInOut);
+                          }
+                         
+                        },
+                        child: Text(
+                          'Back',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontFamily: 'IBM Plex Sans, Bold',
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 120,
+                      ),
+                      Text(
+                        'Skip',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: 'IBM Plex Sans, Bold',
+                            fontWeight: FontWeight.bold),
+                      ),
+                      kWidth30,
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 18),
+                          elevation: 0,
+                          backgroundColor: const Color(0xFFBDFF3B),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                        onPressed: () {
+                          widget.pageController.animateToPage(
+                              widget.pageChanged++,
+                              duration: const Duration(milliseconds: 250),
+                              curve: Curves.bounceInOut);
+                        },
+                        child: Text(
+                          'Next',
+                          style: TextStyle(
+                              color: grey100,
+                              fontSize: 16,
+                              fontFamily: 'IBM Plex Sans, Bold',
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
-            ),
-          )
-        ],
-      ))
-    );
+            )));
   }
 }

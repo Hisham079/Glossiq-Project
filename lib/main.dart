@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sample_glossiq/modules/allCatogories/all_categories.dart';
 import 'package:sample_glossiq/modules/personal_info/personal_info.dart';
 import 'package:sample_glossiq/modules/profile_settings/profile_settings.dart';
-import 'package:sample_glossiq/modules/profile_upbated_screen.dart';
 import 'package:sample_glossiq/modules/salons/salons.dart';
 
 void main() {
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.ibmPlexSans().fontFamily,
         
       ),
-      home:ProfileUpdatedScreen(),
+      home:PersonalInfo(),
     );
   }
 }
