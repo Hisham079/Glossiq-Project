@@ -52,28 +52,66 @@ class CusomTileColumnn extends StatelessWidget {
       margin: EdgeInsets.all(10),
       decoration:
           BoxDecoration(borderRadius: BorderRadius.circular(8), color: grey10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          kWidth10,
-          Text(
-            title,
-            style: TextStyle(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            kHeight10,
+            kHeight10,
+            Text(
+              title,
+              style: TextStyle(
+                  color: grey100,
+                  fontSize: 16,
+                  fontFamily: 'IBM Plex Sans, Medium',
+                  fontWeight: FontWeight.bold),
+            ),
+            kHeight10,
+            Text(
+              subTitle,
+              style: TextStyle(
                 color: grey100,
                 fontSize: 16,
                 fontFamily: 'IBM Plex Sans, Medium',
-                fontWeight: FontWeight.bold),
-          ),
-          kWidth10,
-          Text(
-            subTitle,
-            style: TextStyle(
-              color: grey100,
-              fontSize: 16,
-              fontFamily: 'IBM Plex Sans, Medium',
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+class CustomTile extends StatelessWidget {
+   CustomTile({super.key,required this.text});
+   String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 84,
+      width: 366,
+      margin: EdgeInsets.all(10),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(8), color: grey10),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            kHeight,
+            Text(
+              text,
+              style: TextStyle(
+                  color: grey100,
+                  fontSize: 16,
+                  fontFamily: 'IBM Plex Sans, Medium',
+                  fontWeight: FontWeight.bold),
             ),
-          )
-        ],
+            kHeight10,
+           
+          ],
+        ),
       ),
     );
   }
