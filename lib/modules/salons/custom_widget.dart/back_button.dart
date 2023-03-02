@@ -9,19 +9,16 @@ class CustomBackbutton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: InkWell(
-        onTap: buttonAction,
-        child: Container(
-          height: 35,
-          width: 31,
-          decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(60)),
-              border: Border.all(color: Colors.grey)
-          ),
-          child: Icon(icon,color: Colors.black,),
+    return InkWell(
+      onTap: buttonAction,
+      child: Container(
+        height: 40,
+        width: 40,
+        decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(60)),
+            border: Border.all(color: Colors.grey)
         ),
+        child: Icon(icon,color: Colors.black,),
       ),
     );
   }

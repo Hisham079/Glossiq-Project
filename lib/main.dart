@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sample_glossiq/modules/allCatogories/all_categories.dart';
+import 'package:sample_glossiq/modules/demo.dart';
+import 'package:sample_glossiq/modules/my_profile/my_profile.dart';
 import 'package:sample_glossiq/modules/personal_info/personal_info.dart';
 import 'package:sample_glossiq/modules/profile_settings/profile_settings.dart';
 import 'package:sample_glossiq/modules/salons/salons.dart';
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.ibmPlexSans().fontFamily,
         
       ),
-      home:PersonalInfo(),
+      home:HomePage(title: ''),
     );
   }
 }

@@ -113,14 +113,16 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         ),
                         onPressed: () {
                           if(widget.pageChanged==0){
-                            null;
+                           return null;
                           }else{
                              widget.pageController.animateToPage(
                               widget.pageChanged--,
                               duration: const Duration(milliseconds: 250),
                               curve: Curves.bounceInOut);
                           }
-                         
+                         setState(() {
+                           
+                         });
                         },
                         child: Text(
                           'Back',
