@@ -15,6 +15,13 @@ class ProfileUpdatedScreen extends StatelessWidget {
           height: 205,
           width: 312,
           decoration: BoxDecoration(
+            gradient: RadialGradient(
+                      center: Alignment.bottomCenter,
+                        radius: 0.4,
+                        colors: [Color(0xFFBDFF3B), Colors.white],
+                        focal: Alignment.bottomCenter,
+                        //focalRadius: ,
+                        tileMode: TileMode.clamp),
               borderRadius: BorderRadius.circular(14),
               color: Colors.white,
               boxShadow: [BoxShadow(blurRadius: 5, color: Colors.grey)]),
@@ -59,13 +66,7 @@ class ProfileUpdatedScreen extends StatelessWidget {
                 height: 72,
                 width: 360,
                 decoration: BoxDecoration(
-                    gradient: RadialGradient(
-                      center: Alignment.bottomCenter,
-                        radius: 1.4,
-                        colors: [Color.fromARGB(171, 190, 255, 59), Colors.white],
-                        focal: Alignment.bottomCenter,
-                        focalRadius: 0,
-                        tileMode: TileMode.clamp)),
+                ),
                 margin: EdgeInsets.only(left: 29, right: 20, top: 10),
                 child: Text(
                   '''Lorem Ipsum is simply dummy text of the
