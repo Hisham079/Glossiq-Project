@@ -51,7 +51,7 @@ class ProfileUpdatedScreen extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'IBM Plex Sans, Bold',
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.bold),
               ),
 
              
@@ -60,14 +60,16 @@ class ProfileUpdatedScreen extends StatelessWidget {
                 width: 360,
                 decoration: BoxDecoration(
                     gradient: RadialGradient(
-                        radius: 1,
-                        colors: [Color(0xFFBDFF3B), Colors.white],
+                      center: Alignment.bottomCenter,
+                        radius: 1.4,
+                        colors: [Color.fromARGB(171, 190, 255, 59), Colors.white],
                         focal: Alignment.bottomCenter,
                         focalRadius: 0,
                         tileMode: TileMode.clamp)),
-                margin: EdgeInsets.only(left: 20, right: 20, top: 10),
+                margin: EdgeInsets.only(left: 29, right: 20, top: 10),
                 child: Text(
-                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                  '''Lorem Ipsum is simply dummy text of the
+         printing and typesetting industry.''',
                   style: TextStyle(
                   fontFamily: 'IBM Plex Sans, Regular',
                   color: grey100,
